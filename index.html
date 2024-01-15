@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Clock</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="hello" class="container" onload="showTimes()">
+    </div>
+
+    <script>
+
+        function showTimes() {
+            console.log('show times');
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let session = 'AM';
+
+            if(hours == 0) {
+                hours = 12;
+            }
+
+            if(hours > 12) {
+                hours = hours - 12;
+                session = 'PM';
+            }
+
+            hours = (hours < 10) ? '0'+hours : hours;
+            minutes = (minutes < 10) ? '0'+minutes : minutes;
+            seconds = (seconds < 10) ? '0'+seconds : seconds;
+
+            let time = `${hours} : ${minutes} : ${seconds} ${session}`
+
+            document.querySelector('.container').innerHTML = time;
+            document.querySelector('.container').textContent = time;
+
+            setTimeout(showTimes, 1000);
+        }
+
+        showTimes();
+
+    </script>
+</body>
+</html>

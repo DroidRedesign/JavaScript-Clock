@@ -1,0 +1,14 @@
+body {
+    background: #000000;
+    height: 100%;
+    font-family: Orbitron;
+}
+.container {
+    text-align: center;
+    width: 800px;
+    margin: 50px auto;
+    color: #ffffff;
+    letter-spacing: 7px;
+    color: #17D4FE;
+    font-size: 6.0em;
+}
